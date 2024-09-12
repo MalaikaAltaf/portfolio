@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+ <div id="header">
+    <div class="container">
+        <nav>
+            
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+        <div class="header-text">
+            <p>Software Engineer</p>
+            <h1>Hi,I'm <span>Malaika Altaf</span> <Br> from Pakistan</h1>
+        </div>
+    </div>
+ </div> 
+ 
+ <!--------about--------------->
+ <section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/User.jpeg" alt="User Profile Picture">
+            </div>
+            <div class="about-col-2">
+                <h1>About Me</h1>
+                <p>
+                    I'm a passionate software engineering student currently studying at NUTECH University, honing my skills in programming languages like Java and HTML/CSS.
+                    My journey in software engineering began with a curiosity for how things work behind the scenes. Outside of coding, I enjoy reading novels and researching history, which helps me stay creative and balanced.
+                    I'm always eager to learn new technologies and collaborate on innovative projects. Feel free to explore my portfolio to see some of the projects I've worked on, and don't hesitate to reach out if you'd like to connect or collaborate!
+                </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="openTab('Skills')">Skills</p>
+                    <p class="tab-links" onclick="openTab('Projects')">Projects</p>
+                    <p class="tab-links" onclick="openTab('Education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="Skills">
+                    <ul>
+                        <li><span>Web Development</span><br>Designing Web/App interfaces</li>
+                        <li><span>App Development</span><br>Designing systems</li>
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Projects">
+                    <ul>
+                        <li><span>Cosmetics Website</span><br><a href="https://malaikaaltaf.github.io/Cosmetics-Website/" style="color: aliceblue;">https://malaikaaltaf.github.io/Cosmetics-Website</a></li>
+                        <li><span>Car Showroom management system</span><br><a href="https://github.com/MalaikaAltaf/management-system" style="color: aliceblue;">https://malaikaaltaf.github.io/Cosmetics-Website</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Education">
+                    <ul>
+                        <li><span>Bachelor's Degree</span><br>Software Engineering (3rd Semester) from NUTECH University</li>
+                        <li><span>Java Course</span><br><a> <a href="course.jpg" target="_blank" style="color: aliceblue;">Cerificate</a></li>
+                        <li><span>HSSC [2020-2022]</span><br>Studied at Army Public School and College</li>
+                        <li><span>SSC [2018-2020]</span><br>Highest Achiever</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!---------------------------------Services------------------------------------------->
+<section id="services">
+    <div class="container">
+        <h1 class="sub-title" style="font-size: 48px; font-weight: 600; color: #f0f0f0;">My Services</h1>
+
+        <div class="services-list">
+            <div class="service-item">
+                <h2>Web Design</h2>
+                <p>HTML/CSS/JavaScript</p>
+            </div>
+            <div class="service-item">
+                <h2>App Design</h2>
+                <p>Java, C++</p>
+            </div>
+            <div class="service-item">
+                <h2>UI/UX Design</h2>
+                <p>Figma</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-------------------------------Contact-------------------------------------------->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane-top"></i> malaikaaltaf22@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 03198345447</p>
+                <div class="social-media-icons">
+                    <a href="https://www.linkedin.com/in/malaika-altaf-570b252a8" target="_blank" aria-label="LinkedIn Profile">
+                        <p><i class="fa-brands fa-linkedin"></i>Linkedin</p>
+                    </a>
+                </div>
+                <a href="#" class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" aria-label="Your Name" required>
+                    <input type="email" name="Email" placeholder="@gmail.com" aria-label="Email Address" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message" aria-label="Your Message"></textarea>
+                    <button class="btn btn2" type="submit" aria-label="Submit Message">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright"></div>
+</section>
+
+<script src="script.js"></script>
+<script>
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Form submission started'); // Shows an alert on form submission start
+      fetch('https://script.google.com/macros/s/AKfycbwUCvQKXUXReCa05ZZuDdIt5_LzAvB_RI9y2-4ilUBmBZ3jmG-jDyn64-wEpBJ1wET6/exec', 
+      { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            alert('Success!');  // Shows an alert on success
+            msg.innerHTML = "Message sent successfully";
+            setTimeout(() => {
+              msg.innerHTML = ""  
+            }, 5000);
+            form.reset();
+        })
+        .catch(error => {
+            alert('Error: ' + error.message);  // Shows an alert on error
+            msg.innerHTML = "Failed to send message. Please try again.";
+        })
+    })
+</script>
+<script>
+    var sidemenu = document.getElementById('sidemenu');
+
+function openmenu() {
+    sidemenu.style.right = '0';
+}
+
+function closemenu() {
+    sidemenu.style.right = '-200px';  // Move the menu out of view when closed
+}
+</script>
+
+</body>
+</html>
