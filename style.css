@@ -97,15 +97,7 @@ color:  #e67e22 ;
     flex-wrap: wrap;
 }
 
-.about-col-1 {
-    flex-basis: 40%;
-    padding: 20px;
-}
 
-.about-col-1 img {
-    width: 100%;
-    border-radius: 5%;
-}
 
 .about-col-2 {
     flex-basis: 60%;
