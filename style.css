@@ -167,7 +167,7 @@ color:  #e67e22 ;
         flex-direction: column;
     }
 
-    .about-col-1, .about-col-2 {
+    .about-col-2 {
         flex-basis: 100%;
     }
 
